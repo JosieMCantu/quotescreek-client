@@ -3,16 +3,16 @@ import { makeQuote } from './api-utils.js';
 
 export default class CreatePage extends Component {
     state = {
-        newQuote: '',
-        characterName: '',
+        quote: '',
+        name: '',
         funny_level: 100,
         category_id: 1,
         image: false,
     }
 
-    handleNewQuote = (e) => this.setState({ newQuote: e.target.value })
+    handleNewQuote = (e) => this.setState({ quote: e.target.value })
 
-    handleCharacterName = (e) => this.setState({ characterName: e.target.value })
+    handleCharacterName = (e) => this.setState({ name: e.target.value })
 
     handleFunnylevel = (e) => this.setState({ funny_level: Number(e.target.value) })
 
@@ -36,10 +36,10 @@ export default class CreatePage extends Component {
                 <h1>Add a quote to the site!</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label>The Quote:
-                        <input value={this.state.newQuote} onChange={this.handleNewQuote}></input>
+                        <input value={this.state.quote} onChange={this.handleNewQuote}></input>
                     </label>
                     <label>Character Name:
-                        <input value={this.state.characterName} onChange={this.handleCharacterName}></input>
+                        <input value={this.state.name} onChange={this.handleCharacterName}></input>
                     </label>
                     <label>Funny Level:
                         <input value={this.state.funny_level} onChange={this.handleFunnylevel}></input>

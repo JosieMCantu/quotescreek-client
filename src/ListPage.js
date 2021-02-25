@@ -20,6 +20,7 @@ export default class ListPage extends Component {
     };
 
     render() {
+        console.log(this.state.quotes[0]);
         return (
             <div className="quote-container">
                 {this.state.loading && <Spinner />}
