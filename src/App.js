@@ -29,7 +29,7 @@ export default class App extends Component {
               component={ListPage}
             />
             <Route
-              path="/quotesCreek/:quoteId"
+              path="/quotes/:id"
               exact
               component={DetailPage}
             />

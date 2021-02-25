@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getCategories, getQuotes, getQuote, updateQuote, deleteQuote } from './api-utils'
+import { getQuote, updateQuote, deleteQuote } from './api-utils'
 
 export default class DetailPage extends Component {
     state = {
@@ -8,16 +8,17 @@ export default class DetailPage extends Component {
         funny_level: 100,
         category_id: 1,
         image: false,
-        // categories: []
     }
     componentDidMount = async () => {
-        const quote = getQuote(this.props.match.params.quoteId);
+        const quote = await getQuote(this.props.match.params.id);
+        console.log(quote);
         this.setState({
             quote: quote.quote,
             name: quote.name,
             funny_level: quote.funny_level,
             image: quote.image,
-            category_id: quote.category_id
+            category_id: quote.category_id,
+            id: quote.id
         })
     }
 
@@ -31,12 +32,12 @@ export default class DetailPage extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
-        await updateQuote(this.props.match.params.quoteID, this.state);
+        await updateQuote(this.props.match.params.id, this.state);
         this.props.history.push('/quotesCreek');
     }
     handleDelete = async (e) => {
         e.preventDefault();
-        await deleteQuote(this.props.match.params.quoteID, this.state);
+        await deleteQuote(this.props.match.params.id, this.state);
         this.props.history.push('/quotesCreek');
     }
 
@@ -47,16 +48,16 @@ export default class DetailPage extends Component {
                 <h1>Detail Page</h1>
                 <form>
                     <label>The Quote:
-                        <input value={this.state.quote} onChange={this.handleNewQuote}></input>
+                        <input value={this.state.quote} onChange={this.handleNewQuote} />
                     </label>
                     <label>Character Name:
-                        <input value={this.state.name} onChange={this.handleCharacterName}></input>
+                        <input value={this.state.name} onChange={this.handleNameChange} />
                     </label>
                     <label>Funny Level:
-                        <input value={this.state.funny_level} onChange={this.handleFunnylevel}></input>
+                        <input value={this.state.funny_level} onChange={this.handleFunnylevel} />
                     </label>
                     <label>Is there an image?
-                        <input value={this.state.image} onChange={this.handleImageChange} type="checkbox"></input>
+                        <input onChange={this.handleImageChange} type="checkbox" checked={this.state.image} />
                     </label>
                     <label>Category of character
                         <select value={this.state.category_id} onChange={this.handleCategoryChange}>
@@ -65,7 +66,7 @@ export default class DetailPage extends Component {
                             <option value={3}>Secondary</option>
                         </select>
                     </label>
-                    <button value={this.handleSubmit}>Update it!</button>
+                    <button onClick={this.handleSubmit}>Update it!</button>
                     <button onClick={this.handleDelete}>Delete</button>
                 </form>
             </div >

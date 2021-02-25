@@ -36,16 +36,16 @@ export default class CreatePage extends Component {
                 <h1>Add a quote to the site!</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label>The Quote:
-                        <input value={this.state.quote} onChange={this.handleNewQuote}></input>
+                        <input value={this.state.quote} onChange={this.handleNewQuote} />
                     </label>
                     <label>Character Name:
-                        <input value={this.state.name} onChange={this.handleCharacterName}></input>
+                        <input value={this.state.name} onChange={this.handleCharacterName} />
                     </label>
                     <label>Funny Level:
-                        <input value={this.state.funny_level} onChange={this.handleFunnylevel}></input>
+                        <input value={this.state.funny_level} onChange={this.handleFunnylevel} />
                     </label>
                     <label>Is there an image?
-                        <input value={this.state.image} onChange={this.handleImageChange} type="checkbox"></input>
+                        <input value={this.state.image} onChange={this.handleImageChange} type="checkbox" />
                     </label>
                     <label>Category of character
                         <select value={this.state.category_id} onChange={this.handleCategoryChange}>
