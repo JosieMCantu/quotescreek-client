@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getCategories, getQuotes, getQuote, updateQuote } from './api-utils'
+import { getCategories, getQuotes, getQuote, updateQuote, deleteQuote } from './api-utils'
 
 export default class DetailPage extends Component {
     state = {
@@ -34,12 +34,18 @@ export default class DetailPage extends Component {
         await updateQuote(this.props.match.params.quoteID, this.state);
         this.props.history.push('/quotesCreek');
     }
+    handleDelete = async (e) => {
+        e.preventDefault();
+        await deleteQuote(this.props.match.params.quoteID, this.state);
+        this.props.history.push('/quotesCreek');
+    }
+
 
     render() {
         return (
             <div>
                 <h1>Detail Page</h1>
-                <form onSubmit={this.handleSubmit}>
+                <form>
                     <label>The Quote:
                         <input value={this.state.quote} onChange={this.handleNewQuote}></input>
                     </label>
@@ -59,7 +65,8 @@ export default class DetailPage extends Component {
                             <option value={3}>Secondary</option>
                         </select>
                     </label>
-                    <button>Update it!</button>
+                    <button value={this.handleSubmit}>Update it!</button>
+                    <button onClick={this.handleDelete}>Delete</button>
                 </form>
             </div >
         )
