@@ -23,9 +23,9 @@ export async function makeQuote(aFewWords) {
     return body;
 }
 
-export async function deleteQuote() {
+export async function deleteQuote(id) {
     const { body } = await request
-        .delete(`${URL}/quotesCreek/`);
+        .delete(`${URL}/quotesCreek/${id}`);
     return body;
 }
 
