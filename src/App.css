@@ -1,6 +1,8 @@
 body, html {
   width: 95%;
   background-color: darkslategray;
+  font-family: Tahoma;
+  font-size: larger;
 }
 .active {
   color: white;
@@ -8,6 +10,12 @@ body, html {
 }
 .active:visited {
   color: gray;
+}
+.active:link {
+  color: dimgray;
+}
+.active:hover {
+  color:ghostwhite;
 }
 .quote-container {
   display: flex;
@@ -26,7 +34,6 @@ ul {
 label {
   display: block;
 }
-
 .spinner {
   margin-top: 100px;
 }
