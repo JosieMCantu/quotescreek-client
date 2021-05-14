@@ -20,19 +20,18 @@ export default class ListPage extends Component {
     };
 
     render() {
-        console.log(this.state.quotes[0]);
         return (
             <div className="quote-container">
                 {this.state.loading && <Spinner />}
                 {this.state.quotes.map(quote => <Link to={`/quotes/${quote.id}`} key={quote.quote}>
                     <div className="quote-item">
-                        <p>{quote.image
+                        <p>Has Image: {quote.image
                             ? 'has an image'
                             : 'no image'}</p>
-                        <p>{quote.name}</p>
-                        <p>{quote.category}</p>
-                        <p>{quote.funny_level}</p>
-                        <p>{quote.quote}</p>
+                        <p>Character: {quote.name}</p>
+                        <p>Category: {quote.category}</p>
+                        <p>Funny Level: {quote.funny_level}</p>
+                        <p>Quote: {quote.quote}</p>
                     </div>
                 </Link>
                 )}

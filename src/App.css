@@ -21,7 +21,11 @@ body, html {
 ul {
   list-style-type: none;
   display: flex;
+  justify-content: space-between;
 }
 label {
   display: block;
+}
+.spinner {
+  margin-top: 100px;
 }
