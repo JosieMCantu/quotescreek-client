@@ -4,10 +4,6 @@ body, html {
   font-family: Tahoma;
   font-size: large;
 }
-.active:link {
-  color: white;
-  text-decoration: none;
-}
 .active:visited {
   color: gray;
   text-decoration: none;
@@ -38,7 +34,7 @@ ul {
 }
 label {
   display: block;
-  width: 200px;
+  width: 400px;
 }
 .spinner {
   margin-top: 100px;
