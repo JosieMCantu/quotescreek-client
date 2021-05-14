@@ -2,29 +2,34 @@ body, html {
   width: 95%;
   background-color: darkslategray;
   font-family: Tahoma;
-  font-size: larger;
+  font-size: large;
 }
-.active {
+.active:link {
   color: white;
-  margin: 50px;
+  text-decoration: none;
 }
 .active:visited {
   color: gray;
+  text-decoration: none;
 }
 .active:link {
   color: dimgray;
+  text-decoration: none;
 }
 .active:hover {
   color:ghostwhite;
+  text-decoration: none;
 }
 .quote-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 .quote-item {
   background-color: cadetblue;
-  margin: 10px;
+  margin: 15px;
   width: 200px;
+  border-bottom: 20px;
 }
 ul {
   list-style-type: none;
@@ -33,6 +38,7 @@ ul {
 }
 label {
   display: block;
+  width: 200px;
 }
 .spinner {
   margin-top: 100px;
