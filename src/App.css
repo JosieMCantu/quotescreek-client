@@ -26,6 +26,9 @@ ul {
 label {
   display: block;
 }
+h1, p {
+  color: whitesmoke;
+}
 .spinner {
   margin-top: 100px;
 }
