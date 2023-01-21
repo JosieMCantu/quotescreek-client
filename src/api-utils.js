@@ -1,7 +1,6 @@
 import request from 'superagent';
 
-// const URL = 'https://fast-badlands-63614.herokuapp.com';
-const URL = 'https://symphonious-cannoli-8b299a.netlify.app';
+const URL = 'https://fast-badlands-63614.herokuapp.com';
 
 export async function getQuotes() {
     const response = await request.get(`${URL}/quotesCreek`);
